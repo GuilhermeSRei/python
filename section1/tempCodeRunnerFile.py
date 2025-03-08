@@ -1,0 +1,1 @@
+print(f'O primeiro digito é {digito_1}')
