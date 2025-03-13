@@ -17,13 +17,35 @@ produtos = [
 
 import copy
 
+def exibir(dicionario):
+    for item in dicionario:
+        print(f'{item}')
+
 novos_produtos = copy.deepcopy(produtos)
 
 for produto in novos_produtos:
-    produto['preco'] = round(produto['preco'] * 1.01, 2)
+    produto['preco'] = round(produto['preco'] * 1.1, 2)
 
 produtos_ordenados_por_nome = copy.deepcopy(novos_produtos)
 
-for nome, preco in sorted(produtos_ordenados_por_nome):
-    print(nome, preco)
+produtos_ordenados_por_nome = sorted(produtos_ordenados_por_nome, key=lambda item: item['nome'], reverse=True)
+
+produtos_ordenados_por_preco = copy.deepcopy(novos_produtos)
+
+produtos_ordenados_por_preco = sorted(produtos_ordenados_por_preco, key=lambda item: item['preco'])
+
+print('Essa é a lista de produtos:')
+exibir(produtos)
+print()
+
+print('Essa é a lista de novos produtos:')
+exibir(novos_produtos)
+print()
+
+print('Essa é a lista de produtos ordenados por nome em ordem decrescente:')
+exibir(produtos_ordenados_por_nome)
+print()
+
+print('Essa é a lista de produtos ordenados por preço em ordem crescente:')
+exibir(produtos_ordenados_por_preco)
 
