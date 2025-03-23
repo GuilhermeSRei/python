@@ -47,3 +47,10 @@ print_iter(novos_produtos)
 print(novos_produtos)
 print(hasattr(novos_produtos, '__iter__'))
 print(hasattr(novos_produtos, '__next__'))
+
+print(
+    list(map(
+        lambda x: x *3,
+        [1, 2, 3, 4]
+    ))
+)
