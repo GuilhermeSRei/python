@@ -67,7 +67,7 @@ tarefas_refazer = []
 
 while True:
 
-    print('Comandos: listar, desfazer e refazer')
+    print('Comandos: listar, desfazer, refazer, limpar')
     tarefa = input('Digite uma tarefa ou comando: ')
       
     if tarefa == 'listar':
@@ -87,7 +87,7 @@ while True:
         listar(tarefas)
         continue
 
-    
+   
     
 
     
