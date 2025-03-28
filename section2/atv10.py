@@ -52,16 +52,30 @@ def refazer(tarefas, tarefas_refazer):
 
     print()
 
+def ler(tarefas, caminho_arquivo):
+      dados = []
+      try:
+           with open(caminho_arquivo, 'r', encoding='utf8') as arquivo:
+                dados = json.load(arquivo)
+      except FileNotFoundError:
+          print('Arquivo não encontrado')
+          salvar(tarefas, caminho_arquivo)
+      return dados
 
-tarefas = []
+def salvar(tarefas, caminho_arquivo):
+     with open(caminho_arquivo, 'w', encoding='utf8') as arquivo:
+           dados = json.dump(
+                tarefas,
+                arquivo,
+                ensure_ascii=False,
+                indent=2
+                )
+           return dados
+
+CAMINHO_ARQUIVO = 'atv10.json'
+
+tarefas = ler([], CAMINHO_ARQUIVO)
 tarefas_refazer = []
-
-
-
-# with open('atv10.json', 'r', encoding='utf8'):
-#      json.load(
-          
-#      )
 
 while True:
 
@@ -79,13 +93,14 @@ while True:
     comando = comandos.get(tarefa)if comandos.get(tarefa) is not None else \
         comandos['adicionar']
     comando()
+    salvar(tarefas, CAMINHO_ARQUIVO)
 
-    with open('atv10.json', 'w', encoding='utf8') as arquivo:
-     json.dump(
-          tarefas,
-          arquivo,
-          ensure_ascii=False,
-          indent=2
-     )
+#     with open('atv10.json', 'w', encoding='utf8') as arquivo:
+#      json.dump(
+#           tarefas,
+#           arquivo,
+#           ensure_ascii=False,
+#           indent=2
+#      )
 
 
