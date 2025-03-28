@@ -9,7 +9,7 @@
 # refazer = todo ['fazer café']
 # refazer = todo ['fazer café', 'caminhar']
 
-
+import os
 
 def listar(tarefas):
         print()
@@ -61,6 +61,7 @@ def refazer(tarefas, tarefas_refazer):
 
     print()
 
+
 tarefas = []
 tarefas_refazer = []
 
@@ -77,6 +78,9 @@ while True:
         continue
     elif tarefa == 'refazer':
          refazer(tarefas, tarefas_refazer)
+         continue
+    elif tarefa == 'limpar':
+         os.system('cls')
          continue
     else:
         adicionar(tarefa, tarefas)
