@@ -9,7 +9,7 @@ class Animal:
     variavel = 'Valor'
     print(variavel)
 
-    def acao(self, alimento):
+    def comendo(self, alimento):
         return f'{self.nome} está comendo {alimento}'
     
     def executar(self, *args, **kwargs):
@@ -17,4 +17,4 @@ class Animal:
 
 leao = Animal('leão')
 print(leao.nome)
-print(leao.acao('carne'))
+print(leao.executar('carne'))

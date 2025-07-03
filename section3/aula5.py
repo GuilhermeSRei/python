@@ -7,7 +7,7 @@ class Camera:
 
     def filmar(self):
         if self.filmando:
-            print(f'{self.nome} já está filmando...')
+            print(f'{self.nome} JÁ está filmando...')
             return
 
         print(f'{self.nome} está filmando...')
@@ -15,7 +15,7 @@ class Camera:
 
     def parar_filmar(self):
         if not self.filmando:
-            print(f'{self.nome} não está filmando...')
+            print(f'{self.nome} NÃO está filmando...')
             return
         
         print(f'{self.nome} está parando de filmar...')
@@ -23,7 +23,7 @@ class Camera:
 
     def fotografar(self):
         if self.filmando:
-            print(f'{self.nome} não pode fotografar filmando...')
+            print(f'{self.nome} NÃO pode fotografar filmando...')
             return
         
         print(f'{self.nome} está fotografando...')
@@ -43,7 +43,6 @@ c1.fotografar()
 
 print()
 
-c2.filmar()
 c2.filmar()
 c2.fotografar()
 c2.parar_filmar()
