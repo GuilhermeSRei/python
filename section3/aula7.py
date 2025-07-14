@@ -1,7 +1,4 @@
-# Atributo de classes
-
-# ANO_ATUAL = 2025
-
+#__dict__ e vars para atributos de instância
 
 class Pessoa:
     ano_atual = 2025
@@ -15,12 +12,14 @@ class Pessoa:
     def get_ano_nascimento(self):
         return Pessoa.ano_atual - self.idade
         
+dados = {'nome': 'João', 'idade': 35}
+p1 = Pessoa(**dados)
 
-p1 = Pessoa('João', 35)
-p2 = Pessoa('Guilherme', 22)
+# p1.nome = 'EITA'
+# print(p1.nome)
 
-print(Pessoa.ano_atual)
-# Pessoa.ano_atual = 1
+# p1.__dict__['outra'] = 'EITA'
+# del p1.__dict__['nome']
 
-print(p1.get_ano_nascimento())
-print(p2.get_ano_nascimento())
+# print(p1.__dict__)
+print(vars(p1))
